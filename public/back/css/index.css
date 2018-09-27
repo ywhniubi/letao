@@ -12,12 +12,14 @@ ul{
 
 .lt_leftside{
 	width: 180px;
-	height:800px;
+	height:100%;
 	background-color: #222D32;
-	position: relative;
+	position: fixed;
 	left:0px;
-	top: 0px 
+	top: 0px ;
+		z-index: 999;
 }
+
 .left_title a{
 	color:white;
 	background-color: #367FA9;
@@ -27,6 +29,7 @@ ul{
 	display: block;
 	text-align: center;
 	line-height: 50px;
+	
 }
 .left_user{
 	width: 180px;
@@ -56,3 +59,34 @@ ul{
 	background-color: #1D1F21;
     border-left: 3px solid #006699;
 }
+/*左侧侧边栏完成*/
+.lt_rightside{
+padding-left: 210px;
+padding-top: 50px;
+}
+
+.right_top {
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+    background-color: #3C8DBC;
+	padding-left: 180px;
+	z-index: 666;	
+	padding-left: 210px;
+	padding-right: 30px;
+	
+}
+.right_top a{
+	font-size: 20px;
+	color: white;
+	line-height: 50px;
+
+}
+.breadcrumb{
+	margin-top: 20px;
+}
+
+
+
