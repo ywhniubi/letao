@@ -55,7 +55,7 @@ ul{
 	border-left: 3px solid transparent;
 
 }
-.catrioy li.current{
+.catrioy .current{
 	background-color: #1D1F21;
     border-left: 3px solid #006699;
 }
@@ -88,5 +88,8 @@ padding-top: 50px;
 	margin-top: 20px;
 }
 
+#main{
+	background-color: skyblue;
+}
 
 
