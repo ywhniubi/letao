@@ -1,0 +1,23 @@
+
+*{
+	box-sizing:border-box;
+}
+
+.mt_150{
+
+margin-top: 150px;
+
+}
+body{
+	background-color:#222D32;
+}
+.panel-title{
+	text-align: center;
+	line-height: 42px;
+}
+
+
+.btns{
+	overflow: hidden;
+  	padding-left: 45px;
+}
