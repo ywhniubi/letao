@@ -39,7 +39,7 @@ $(function(){
 		$(".right_top").css("transition","1s")
 	})
 
-
+		// 右侧模态框显示与隐藏
 		$(".exit-right").click(function(){
 
 			$("#model").modal("toggle")
@@ -48,4 +48,23 @@ $(function(){
 
 		})
 
+
+//模态框退出按钮应该在服务器端调用后台的接口在服务器端销毁该用户的登陆状态
+		$("#logoutBtn").click(function(){
+		$.ajax({
+			type:"get",
+			url:"/employee/employeeLogout",
+			dataType:"json",
+			success:function(info){
+				console.log(info)
+				if(info.success){    //判断返回的数据为true即跳转到登录页
+					location.href="login.html"
+				}
+			}
+		})
+
+
+		})
+
 })
+
