@@ -2,6 +2,8 @@
 
 
 $(function(){
+  var currentid;
+  var isDelete;
 var currentPage=1;
 var pageSize=5;
 render();
@@ -12,6 +14,7 @@ $.ajax({
 			data:{page:currentPage,pageSize:pageSize},
 			dataType:"json",
 			success:function(info){
+        console.log(info);
 				var htmlstr=template("tmp",info);
 	 			$('tbody').html(htmlstr);
 	 			$("#pagintor").bootstrapPaginator({
@@ -21,6 +24,7 @@ $.ajax({
   					size:"small",//设置控件的大小，mini, small, normal,large
   					onPageClicked:function(a, b, c,page){
   	   // 更新当前页
+
             currentPage = page;
             // 重新根据 render
             render();
@@ -34,7 +38,47 @@ $.ajax({
 
 
 }
+
+$("tbody").on("click","button",function(){
+  $("#usermodel").modal("show");  //模态框显示
+  currentid=$(this).parent().attr("data-id")//拿到对应用户的id 
+  isDelete = $(this).hasClass("btn-danger") ? 0 : 1;
+  });
+
+
+
+$("#userupdate").on("click",function(){
+$.ajax({
+    type:"post",
+    url:"/user/updateUser",
+    data:{id:currentid,isDelete:isDelete},
+    dataType:"json",
+    success:function(info){
+      console.log(info);
+      if(info.success){
+      $("#usermodel").modal("hide");
+      render();
+      }
+    }
+
+
+
+
+
+
+
 })
+
+
+
+})
+
+
+})
+
+
+
+
 
 
 
