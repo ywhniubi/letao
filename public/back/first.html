@@ -68,6 +68,8 @@
   	<script src="./lib/nprogress/nprogress.js"></script>
   	<script src="./js/common.js"></script>
   	<script src="./js/checklogin.js"></script>
+  	<script src="./lib/artTemplate/template-web.js"></script>
+  	<script src="./js/first.js"></script>
  <div class="lt_rightside">
  	<div class="right_top">
  		<a href="#" class="pull-left ">
@@ -85,6 +87,32 @@
  		<li class="active">一级分类</li>
 	</ol>
  		</div>
+
+		<table class="table table-bordered table-hover text-center">
+			<thead>
+			<tr>
+				<th>序号</th>
+				<th>一级分类名</th>
+			</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+
+		<script type="text/html" id="tmp">
+		{{ each rows v i}}
+			<tr>
+				<td>{{i+1+(page-1)*size}}</td>
+				<td>{{v.categoryName}}</td>
+			</tr>
+		{{/each}}
+
+		</script>
+		
+
+
+
+
+
 
 <!-- bootstrap插件 模态框 -->
 <!-- 外面时蒙层 -->
