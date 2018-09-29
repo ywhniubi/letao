@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
   	<link rel="stylesheet" href="./lib/nprogress/nprogress.css">
   	<link rel="stylesheet" href="./css/index.css">
+  	<link rel="stylesheet" href="./css/second.css">
 <body>
 	<!-- 左边侧边栏 -->
  <div class="lt_leftside">
@@ -62,12 +63,17 @@
 
 
 	<script src="./lib/jquery/jquery.js"></script>
+	<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+	<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
 	<script src="./lib/bootstrap/js/bootstrap.js"></script>
 	<script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
 	<script src="./js/checklogin.js"></script>
   	<script src="./lib/nprogress/nprogress.js"></script>
   	<script src="./js/common.js"></script>
   	<script src="./js/checklogin.js"></script>
+  	<script src="./js/second.js"></script>
+  	<script src="./lib/artTemplate/template-web.js"></script>
+  	<script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
  <div class="lt_rightside">
  	<div class="right_top">
  		<a href="#" class="pull-left ">
@@ -77,32 +83,114 @@
  			<i class="glyphicon glyphicon-log-out exit-right"></i>
  		</a>
  	</div><!-- 
- 		流式布局容器有左右吗，默认padding -->
+ 		流式布局容器有左右默认padding -->
  		<div class="container-fluid" >
  	<ol class="breadcrumb">
- 		<li><a href="#">管理系统</a></li>
- 		<li class="active">分类管理</li>
+ 		<li  class="active"><a href="#">管理系统</a></li>
+ 		<li class="active"><a href="#">分类管理</a></li>
  		<li class="active">二级管理</li>
 	</ol>
+
+	<button class="add_btn">添加分类</button>
+
+
+
+		<table class="table  table-bordered table-hover text-center" style=margin-top:50px>
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>一级分类名称</th>
+					<th>二级分类名称</th>
+					<th>二级分类logo</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+
+
+		<ul id="pagintor"></ul>
  		</div>
+	<script type="text/html" id="tmp">
+	{{each rows v  i}}
+		<tr>
+			<td>{{i+1+(page-1)*size}}</td>
+			<td>{{v.categoryName}}</td>
+			<td>{{v.brandName}}</td>
+			<td><img src="{{v.brandLogo}}" alt=""></td>
+		</tr>
+	{{/each}}
+	
+		
+
+
+
+
+
+
+	</script>
+	<script type="text/html" id="tmp2">
+		{{each rows v i}}
+		<li><a href="#">{{v.categoryName}}</a></li>
+		{{/each}}
+
+
+	</script>
+	
+
+
+
+
+
+
 
 <!-- bootstrap插件 模态框 -->
 <!-- 外面时蒙层 -->
-<div class="modal fade " tabindex="-1" role="dialog" id="model"> 
+<div class="modal fade " tabindex="-1" role="dialog" id="add_model"> 
 <!-- 里面是模态框大小尺寸设置 -->
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">温馨提示</h4>
+        <button type="button" class="close" data-dismiss="modal" ></button>
+        <h4 class="modal-title">添加分类</h4>
       </div>
-      <div class="modal-body" style="color: #A94442;">
-      <i class="glyphicon glyphicon-info-sign"></i>
-        您确定退出系统吗?
+      <div class="modal-body" >
+      	<div><button id="slide_btn" class="btn btn-defult"> 
+      	 		<span id="dropdownTxt">请选择一级分类</span>
+                <span class="caret"></span>
+               </button>
+        </div>
+      		<ul class="slide_menu">
+
+
+
+
+   <!-- 占个位置 -->
+
+
+
+      		</ul>
+      		<input type="hidden" name="categoryId">
+      	<div style="margin:20px 0px;"><input type="text"></div>
+      	<div class="form-group">
+            <label for="fileupload" class="btn btn-default">上传图片</label>
+            <!-- 指定 name 用于后台将来接收文件
+                 指定 data-url 用于指定后台文件上传的地址
+            -->
+            <input style="display: none;" type="file" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic">
+          </div>
+          <!-- 图片盒子 -->
+
+      	 <div class="form-group" id="imgBox">
+            <img src="./images/none.png" width="100" height="100"  alt="">
+            <input type="hidden" name="brandLogo">
+          </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+        <button type="button" class="btn btn-primary" id="add_c">添加</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

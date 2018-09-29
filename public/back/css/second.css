@@ -1,0 +1,21 @@
+
+ul{
+	list-style: none;
+	padding: 0px;
+	
+}
+
+.slide_menu{
+	position:absolute;
+	left:10px;
+	width: 140px;
+	border: 1px solid rgba(0, 0, 0, .15);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+	z-index: 999;
+	background-color: #fff;
+	display: none;
+
+}
+.slide_menu li{
+	line-height: 20px;
+}
