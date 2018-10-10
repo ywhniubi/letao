@@ -1,0 +1,51 @@
+.search_body{
+	width: 100%;
+	padding: 0px 30px;
+	position: relative;
+}
+#big{
+	padding-top: 60px;
+}
+.search_body input{
+	width: 100%;
+	height: 34px;
+	border:1px solid #007AFF;
+	padding: 0px;
+	margin: 0px;
+}
+.search_body button{
+	position: absolute;
+	right: 30px;
+	top:0px;
+	height: 34px;
+}
+.letao_history{
+	margin-top: 10px;
+}
+.letao_history p{
+	text-align: left;
+}
+.letao_history .title{
+	height: 20px;
+	 font-size: 12px;
+    color: #666;
+}
+.letao_history .bodys{
+	height: 100px;
+}
+.letao_history .bodys ul{
+	list-style:none;
+	border: 1px dashed red;
+	padding: 0px;
+}
+.letao_history .bodys li{
+	height: 30px;
+    line-height: 30px;
+    border-bottom: 1px dashed red;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #666;
+}
+.letao_history .bodys li:last-child{
+	border-bottom: none;
+}

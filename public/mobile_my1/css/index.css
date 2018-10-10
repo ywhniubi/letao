@@ -1,0 +1,68 @@
+.letao_container{
+	padding-top: 45px;
+	overflow: hidden;
+}
+.letao_body{
+	width: 100%;
+	height:100%;
+}
+.body_nav{
+	width: 100%;
+}
+.body_nav ul{
+	width: 100%;
+	height: 100%;
+	list-style:none;
+	margin:0px;
+	padding: 10px 10px;
+}
+.body_nav li{
+	float: left;
+	width: 33%;
+	margin:0px ;
+	padding:0px;
+	height:191px;
+}
+.body_nav img{
+	width: 100%
+}
+.product{
+	width: 100%
+}
+.product ul{
+	width: 100%;
+	height:100%;
+	padding-left: 8px;
+	padding-right: 8px;
+
+}
+.product ul li{
+	padding: 15px;
+	width:49%;
+	list-style:none;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+.product ul li:nth-child(2n-1){
+	float:left;
+	margin-right:5px;
+	margin-bottom:10px;
+}
+.product ul li:nth-child(2n){
+	float:right;
+	margin-bottom:10px;
+}
+
+
+.product ul li img{
+	width:99%;
+}
+.product ul li .oldPrice{
+	color:red;
+}
+.product ul li .price{
+	text-decoration: line-through;
+}
+.mui-scroll-wrapper{
+	top:45px;
+}
